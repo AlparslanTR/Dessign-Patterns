@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Settings
+
+<form id="myForm" asp-controller="Settings" asp-action="ChangeDatabase" method="post">
+    <select name="databaseType" asp-for="DatabaseType" asp-items="Html.GetEnumSelectList<EDatabaseType>()">
+    </select>
+    <button id="updateButton" class="btn btn-outline-primary" type="submit">Güncelle</button>
+</form>
+<script src="~/settingsUpdate.js" asp-append-version="true"></script>
+
+
+
